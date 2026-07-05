@@ -153,9 +153,24 @@ ul, ol {
     justify-content: center;
     position: relative;
     padding: 8rem 2rem 4rem;
+    overflow: hidden;
+}
+
+.hero-particles {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    pointer-events: none;
+    mask-image: linear-gradient(to right, transparent 10%, rgba(0,0,0,0.3) 40%, rgba(0,0,0,0.7) 100%);
+    -webkit-mask-image: linear-gradient(to right, transparent 10%, rgba(0,0,0,0.3) 40%, rgba(0,0,0,0.7) 100%);
 }
 
 .hero-inner {
+    position: relative;
+    z-index: 1;
     max-width: var(--container);
     width: 100%;
 }
@@ -210,6 +225,7 @@ ul, ol {
     letter-spacing: 0.1em;
     text-transform: uppercase;
     color: var(--text-muted);
+    z-index: 1;
 }
 
 .scroll-line {
