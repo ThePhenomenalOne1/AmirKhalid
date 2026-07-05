@@ -38,8 +38,8 @@ document.addEventListener('DOMContentLoaded', () => {
     if (canvas) {
         const ctx = canvas.getContext('2d');
         let width, height, particles;
-        const PARTICLE_COUNT = 60;
-        const CONNECTION_DIST = 120;
+        const PARTICLE_COUNT = 90;
+        const CONNECTION_DIST = 160;
         const ACCENT = { r: 200, g: 169, b: 110 };   // matches --accent
 
         function resize() {
@@ -56,8 +56,8 @@ document.addEventListener('DOMContentLoaded', () => {
                     y: Math.random() * height,
                     vx: (Math.random() - 0.5) * 0.3,
                     vy: (Math.random() - 0.5) * 0.3,
-                    r: Math.random() * 1.5 + 0.5,
-                    opacity: Math.random() * 0.4 + 0.15
+                    r: Math.random() * 2.2 + 0.8,
+                    opacity: Math.random() * 0.5 + 0.25
                 });
             }
         }
@@ -72,7 +72,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     const dy = particles[i].y - particles[j].y;
                     const dist = Math.sqrt(dx * dx + dy * dy);
                     if (dist < CONNECTION_DIST) {
-                        const alpha = (1 - dist / CONNECTION_DIST) * 0.08;
+                        const alpha = (1 - dist / CONNECTION_DIST) * 0.15;
                         ctx.beginPath();
                         ctx.moveTo(particles[i].x, particles[i].y);
                         ctx.lineTo(particles[j].x, particles[j].y);
