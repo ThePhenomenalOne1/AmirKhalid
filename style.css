@@ -228,6 +228,52 @@ ul, ol {
     z-index: 1;
 }
 
+.hero-scroll span {
+    position: relative;
+    display: inline-block;
+    animation: glitch 5s infinite;
+}
+
+.hero-scroll span::before,
+.hero-scroll span::after {
+    content: 'Scroll';
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+}
+
+.hero-scroll span::before {
+    color: rgba(200, 169, 110, 0.6);
+    animation: glitch-before 5s infinite;
+}
+
+.hero-scroll span::after {
+    color: rgba(138, 135, 131, 0.6);
+    animation: glitch-after 5s infinite;
+}
+
+@keyframes glitch {
+    0%, 88%, 92%, 100% { transform: none; }
+    89% { transform: translateX(2px) skewX(-1deg); }
+    90% { transform: translateX(-1px); }
+    91% { transform: translateX(1px) skewX(0.5deg); }
+}
+
+@keyframes glitch-before {
+    0%, 88%, 92%, 100% { opacity: 0; transform: none; }
+    89% { opacity: 1; transform: translateX(-2px); }
+    90% { opacity: 0.6; transform: translateX(1px); }
+    91% { opacity: 1; transform: translateX(-1px); }
+}
+
+@keyframes glitch-after {
+    0%, 88%, 92%, 100% { opacity: 0; transform: none; }
+    89% { opacity: 1; transform: translateX(2px); }
+    90% { opacity: 0.5; transform: translateX(-2px); }
+    91% { opacity: 1; transform: translateX(1px); }
+}
+
 .scroll-line {
     width: 40px;
     height: 1px;
