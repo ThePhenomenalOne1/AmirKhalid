@@ -469,6 +469,22 @@ ul, ol {
     margin-bottom: 0.3rem;
 }
 
+.exp-flair {
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 0.2rem 0.55rem;
+    background: var(--accent-dim);
+    color: var(--accent);
+    border: 1px solid rgba(200, 169, 110, 0.3);
+    border-radius: 4px;
+    margin-left: 0.5rem;
+    line-height: 1.2;
+}
+
 .exp-company {
     font-size: 0.95rem;
     color: var(--accent);
