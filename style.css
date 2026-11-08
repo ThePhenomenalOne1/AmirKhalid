@@ -929,3 +929,61 @@ footer {
     }
 }
 
+/* Little Snowmen */
+.little-snowman {
+    position: absolute;
+    width: 36px;
+    height: 44px;
+    pointer-events: auto;
+    cursor: pointer;
+    z-index: 6;
+    overflow: visible;
+    filter: drop-shadow(0 3px 5px rgba(0, 0, 0, 0.5));
+    transition: transform 0.3s var(--ease);
+}
+
+.little-snowman:hover {
+    animation: snowmanWobble 0.75s ease-in-out;
+}
+
+@keyframes snowmanWobble {
+    0%, 100% {
+        transform: scale(1.1) rotate(0deg);
+    }
+    20% {
+        transform: scale(1.15) rotate(-10deg) translateY(-2px);
+    }
+    45% {
+        transform: scale(1.15) rotate(10deg) translateY(-3px);
+    }
+    70% {
+        transform: scale(1.1) rotate(-4deg);
+    }
+}
+
+.snowman-edu {
+    top: -38px;
+    right: 24px;
+}
+
+.snowman-skill {
+    top: -38px;
+    right: 24px;
+}
+
+.snowman-contact {
+    top: -38px;
+    right: 24px;
+}
+
+.snowman-footer {
+    position: relative;
+    display: inline-block;
+    width: 28px;
+    height: 35px;
+    margin-left: 0.6rem;
+    vertical-align: middle;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.4));
+}
+
+

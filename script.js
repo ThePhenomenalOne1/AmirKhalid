@@ -178,6 +178,123 @@ document.addEventListener('DOMContentLoaded', () => {
                 <g class="snow-sparkle snow-sparkle-1" transform="translate(100, 2.5)"><path d="M0,-2 Q0,0 2,0 Q0,0 0,2 Q0,0 -2,0 Q0,0 0,-2 Z" fill="#ffffff"/></g>
             </svg>`;
 
+        const SNOWMAN_TEMPLATES = {
+            edu: `<svg class="little-snowman snowman-edu" viewBox="0 0 38 46" aria-label="Snowman with top hat" role="img" title="Enjoying the winter! ⛄">
+                <defs>
+                    <radialGradient id="snwHead1" cx="35%" cy="35%" r="65%">
+                        <stop offset="0%" stop-color="#ffffff"/>
+                        <stop offset="75%" stop-color="#f0f5fb"/>
+                        <stop offset="100%" stop-color="#d3e2ee"/>
+                    </radialGradient>
+                    <radialGradient id="snwBody1" cx="35%" cy="35%" r="65%">
+                        <stop offset="0%" stop-color="#ffffff"/>
+                        <stop offset="80%" stop-color="#ebf3f9"/>
+                        <stop offset="100%" stop-color="#cadbe8"/>
+                    </radialGradient>
+                </defs>
+                <line x1="11" y1="30" x2="2" y2="24" stroke="#795548" stroke-width="1.6" stroke-linecap="round"/>
+                <line x1="4" y1="25" x2="3" y2="21" stroke="#795548" stroke-width="1.2" stroke-linecap="round"/>
+                <line x1="27" y1="30" x2="36" y2="22" stroke="#795548" stroke-width="1.6" stroke-linecap="round"/>
+                <line x1="34" y1="24" x2="36" y2="28" stroke="#795548" stroke-width="1.2" stroke-linecap="round"/>
+                <circle cx="19" cy="34" r="10.5" fill="url(#snwBody1)"/>
+                <circle cx="19" cy="20" r="7.5" fill="url(#snwHead1)"/>
+                <circle cx="19" cy="31" r="1" fill="#222222"/>
+                <circle cx="19" cy="35" r="1" fill="#222222"/>
+                <circle cx="19" cy="39" r="1" fill="#222222"/>
+                <circle cx="16.5" cy="18.5" r="1" fill="#1a1a1a"/>
+                <circle cx="21" cy="18.5" r="1" fill="#1a1a1a"/>
+                <polygon points="18.5,20.5 25,21.5 18.5,22.5" fill="#e67e22"/>
+                <circle cx="16" cy="23.5" r="0.6" fill="#222222"/>
+                <circle cx="17.5" cy="24.5" r="0.6" fill="#222222"/>
+                <circle cx="19.5" cy="24.5" r="0.6" fill="#222222"/>
+                <circle cx="21" cy="23.5" r="0.6" fill="#222222"/>
+                <path d="M12,26 C15,28 23,28 26,26" stroke="#c8a96e" stroke-width="3" stroke-linecap="round"/>
+                <path d="M21,27 L22,34 L25,33 L23.5,27 Z" fill="#c8a96e"/>
+                <rect x="12" y="13" width="14" height="2" rx="0.8" fill="#181818"/>
+                <rect x="14" y="6" width="10" height="7.5" rx="0.8" fill="#181818"/>
+                <rect x="14" y="11.5" width="10" height="1.8" fill="#c8a96e"/>
+            </svg>`,
+
+            skill: `<svg class="little-snowman snowman-skill" viewBox="0 0 38 46" aria-label="Snowman with earmuffs" role="img" title="Happy coding & learning! ❄️">
+                <defs>
+                    <radialGradient id="snwHead3" cx="35%" cy="35%" r="65%">
+                        <stop offset="0%" stop-color="#ffffff"/>
+                        <stop offset="75%" stop-color="#f0f5fb"/>
+                        <stop offset="100%" stop-color="#d3e2ee"/>
+                    </radialGradient>
+                    <radialGradient id="snwBody3" cx="35%" cy="35%" r="65%">
+                        <stop offset="0%" stop-color="#ffffff"/>
+                        <stop offset="80%" stop-color="#ebf3f9"/>
+                        <stop offset="100%" stop-color="#cadbe8"/>
+                    </radialGradient>
+                </defs>
+                <line x1="11" y1="30" x2="3" y2="25" stroke="#795548" stroke-width="1.6" stroke-linecap="round"/>
+                <line x1="27" y1="30" x2="35" y2="25" stroke="#795548" stroke-width="1.6" stroke-linecap="round"/>
+                <circle cx="19" cy="34" r="10.5" fill="url(#snwBody3)"/>
+                <circle cx="19" cy="20" r="7.5" fill="url(#snwHead3)"/>
+                <circle cx="19" cy="31" r="1" fill="#222222"/>
+                <circle cx="19" cy="35" r="1" fill="#222222"/>
+                <circle cx="19" cy="39" r="1" fill="#222222"/>
+                <circle cx="16.5" cy="19" r="1" fill="#1a1a1a"/>
+                <circle cx="21" cy="19" r="1" fill="#1a1a1a"/>
+                <polygon points="18.5,20.8 24.5,21.6 18.5,22.6" fill="#e67e22"/>
+                <circle cx="17" cy="24" r="0.6" fill="#222222"/>
+                <circle cx="18.5" cy="24.6" r="0.6" fill="#222222"/>
+                <circle cx="20.5" cy="24" r="0.6" fill="#222222"/>
+                <path d="M12,26 C15,28 23,28 26,26" stroke="#c8a96e" stroke-width="3" stroke-linecap="round"/>
+                <path d="M19,27 L20,33 L22.5,33 L21,27 Z" fill="#c8a96e"/>
+                <path d="M11.5,19 C11,10 27,10 26.5,19" stroke="#1f1f1f" stroke-width="1.4" fill="none"/>
+                <circle cx="11.5" cy="19" r="2.8" fill="#c8a96e"/>
+                <circle cx="26.5" cy="19" r="2.8" fill="#c8a96e"/>
+            </svg>`,
+
+            contact: `<svg class="little-snowman snowman-contact" viewBox="0 0 38 46" aria-label="Waving snowman in beanie" role="img" title="Say hello to Amir! 👋⛄">
+                <defs>
+                    <radialGradient id="snwHead2" cx="35%" cy="35%" r="65%">
+                        <stop offset="0%" stop-color="#ffffff"/>
+                        <stop offset="75%" stop-color="#f0f5fb"/>
+                        <stop offset="100%" stop-color="#d3e2ee"/>
+                    </radialGradient>
+                    <radialGradient id="snwBody2" cx="35%" cy="35%" r="65%">
+                        <stop offset="0%" stop-color="#ffffff"/>
+                        <stop offset="80%" stop-color="#ebf3f9"/>
+                        <stop offset="100%" stop-color="#cadbe8"/>
+                    </radialGradient>
+                </defs>
+                <line x1="11" y1="30" x2="3" y2="23" stroke="#795548" stroke-width="1.6" stroke-linecap="round"/>
+                <line x1="27" y1="30" x2="36" y2="19" stroke="#795548" stroke-width="1.6" stroke-linecap="round"/>
+                <line x1="33" y1="22" x2="36" y2="25" stroke="#795548" stroke-width="1.2" stroke-linecap="round"/>
+                <circle cx="19" cy="34" r="10.5" fill="url(#snwBody2)"/>
+                <circle cx="19" cy="20" r="7.5" fill="url(#snwHead2)"/>
+                <circle cx="19" cy="32" r="1" fill="#222222"/>
+                <circle cx="19" cy="36" r="1" fill="#222222"/>
+                <circle cx="16.5" cy="19.5" r="1" fill="#1a1a1a"/>
+                <circle cx="21" cy="19.5" r="1" fill="#1a1a1a"/>
+                <polygon points="18.5,21 25,21.8 18.5,22.8" fill="#e67e22"/>
+                <circle cx="16.5" cy="24" r="0.6" fill="#222222"/>
+                <circle cx="18" cy="24.8" r="0.6" fill="#222222"/>
+                <circle cx="20" cy="24.8" r="0.6" fill="#222222"/>
+                <circle cx="21.5" cy="24" r="0.6" fill="#222222"/>
+                <path d="M12,26.5 C15,28.5 23,28.5 26,26.5" stroke="#c8a96e" stroke-width="3.2" stroke-linecap="round"/>
+                <path d="M15,28 L14,35 L17,35 L17.5,28 Z" fill="#c8a96e"/>
+                <path d="M12.5,14.5 C13,8 25,8 25.5,14.5 Z" fill="#242424"/>
+                <rect x="11.5" y="13.5" width="15" height="2.5" rx="1.2" fill="#c8a96e"/>
+                <circle cx="19" cy="7" r="2.2" fill="#ffffff"/>
+            </svg>`,
+
+            footer: `<svg class="little-snowman snowman-footer" viewBox="0 0 38 46" aria-label="Little footer snowman" role="img" title="Happy holidays! ✨">
+                <circle cx="19" cy="34" r="10.5" fill="#ffffff"/>
+                <circle cx="19" cy="20" r="7.5" fill="#ffffff"/>
+                <circle cx="16.5" cy="18.5" r="1" fill="#1a1a1a"/>
+                <circle cx="21" cy="18.5" r="1" fill="#1a1a1a"/>
+                <polygon points="18.5,20.5 25,21.5 18.5,22.5" fill="#e67e22"/>
+                <path d="M12,26 C15,28 23,28 26,26" stroke="#c8a96e" stroke-width="2.8" stroke-linecap="round"/>
+                <rect x="12" y="13" width="14" height="2" rx="0.8" fill="#181818"/>
+                <rect x="14" y="7" width="10" height="6.5" rx="0.8" fill="#181818"/>
+                <rect x="14" y="12" width="10" height="1.5" fill="#c8a96e"/>
+            </svg>`
+        };
+
         function calculateWinterState() {
             const params = new URLSearchParams(window.location.search);
             if (params.has('snow')) {
@@ -252,7 +369,7 @@ document.addEventListener('DOMContentLoaded', () => {
         updateCapHeight(winterState.progress);
 
         function attachSnowCaps() {
-            document.querySelectorAll('.card-snow-cap, .badge-snow-cap').forEach(el => el.remove());
+            document.querySelectorAll('.card-snow-cap, .badge-snow-cap, .little-snowman').forEach(el => el.remove());
 
             // Target card boxes: Education, Skills, Contact
             const targetCards = document.querySelectorAll('.edu-card, .skill-block, .contact-card');
@@ -265,6 +382,27 @@ document.addEventListener('DOMContentLoaded', () => {
             const heroBadge = document.querySelector('.hero-badge');
             if (heroBadge) {
                 heroBadge.insertAdjacentHTML('afterbegin', BADGE_SNOW_TEMPLATE);
+            }
+
+            // Perch little snowmen on select boxes
+            const eduCard = document.querySelector('.edu-card');
+            if (eduCard) {
+                eduCard.insertAdjacentHTML('afterbegin', SNOWMAN_TEMPLATES.edu);
+            }
+
+            const skillBlock = document.querySelector('.skill-block');
+            if (skillBlock) {
+                skillBlock.insertAdjacentHTML('afterbegin', SNOWMAN_TEMPLATES.skill);
+            }
+
+            const contactCard = document.querySelector('.contact-card');
+            if (contactCard) {
+                contactCard.insertAdjacentHTML('afterbegin', SNOWMAN_TEMPLATES.contact);
+            }
+
+            const footerInner = document.querySelector('.footer-inner');
+            if (footerInner && !footerInner.querySelector('.snowman-footer')) {
+                footerInner.insertAdjacentHTML('beforeend', SNOWMAN_TEMPLATES.footer);
             }
         }
         attachSnowCaps();
@@ -400,7 +538,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 attachSnowCaps();
                 createFlakes(prog);
             } else {
-                document.querySelectorAll('.card-snow-cap, .badge-snow-cap').forEach(el => el.remove());
+                document.querySelectorAll('.card-snow-cap, .badge-snow-cap, .little-snowman').forEach(el => el.remove());
                 ctx.clearRect(0, 0, width, height);
                 flakes = [];
             }
