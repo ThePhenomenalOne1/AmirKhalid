@@ -176,6 +176,7 @@ ul, ol {
 }
 
 .hero-badge {
+    position: relative;
     display: inline-block;
     font-size: 0.8rem;
     letter-spacing: 0.15em;
@@ -510,6 +511,7 @@ ul, ol {
 }
 
 .edu-card {
+    position: relative;
     background: var(--bg-card);
     border: 1px solid var(--border);
     border-radius: 8px;
@@ -590,6 +592,7 @@ ul, ol {
 }
 
 .skill-block {
+    position: relative;
     background: var(--bg-card);
     border: 1px solid var(--border);
     border-radius: 8px;
@@ -716,6 +719,7 @@ ul, ol {
 }
 
 .contact-card {
+    position: relative;
     display: flex;
     flex-direction: column;
     background: var(--bg-card);
@@ -853,3 +857,75 @@ footer {
         display: none;
     }
 }
+
+/* ========================
+   WINTER & CHRISTMAS SEASON
+   ======================== */
+.snow-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    z-index: 95;
+}
+
+.card-snow-cap {
+    position: absolute;
+    top: -12px;
+    left: -2px;
+    width: calc(100% + 4px);
+    height: var(--snow-cap-height, 18px);
+    pointer-events: none;
+    z-index: 4;
+    overflow: visible;
+    filter: drop-shadow(0 3px 4px rgba(0, 0, 0, 0.45));
+    transition: transform 0.3s var(--ease), height 0.3s var(--ease), filter 0.3s var(--ease);
+}
+
+.edu-card:hover .card-snow-cap,
+.skill-block:hover .card-snow-cap,
+.contact-card:hover .card-snow-cap {
+    transform: translateY(-2px);
+    filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.6));
+}
+
+.badge-snow-cap {
+    position: absolute;
+    top: -7px;
+    left: -2px;
+    width: calc(100% + 4px);
+    height: 11px;
+    pointer-events: none;
+    z-index: 4;
+    overflow: visible;
+    filter: drop-shadow(0 2px 3px rgba(0, 0, 0, 0.45));
+}
+
+.snow-sparkle {
+    transform-origin: center;
+    animation: snowSparkle 3.5s ease-in-out infinite;
+}
+
+.snow-sparkle-2 {
+    animation-delay: 1.6s;
+    animation-duration: 4.2s;
+}
+
+.snow-sparkle-3 {
+    animation-delay: 0.8s;
+    animation-duration: 3s;
+}
+
+@keyframes snowSparkle {
+    0%, 100% {
+        opacity: 0.15;
+        transform: scale(0.6);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.25) rotate(15deg);
+    }
+}
+
